@@ -5,17 +5,25 @@
 
 int main(void)
 {
+	int8_t ax, ay, az;
+	int8_t wx, wy, wz;
 	usart1_init();
 	i2c1_init();
 	
 	while(1)
 	{
-		printf("\nax = %d \n",mpu6050_get_data(ACCEL_XOUT_H));
-		printf("\nay = %d \n",mpu6050_get_data(ACCEL_YOUT_H));	
-		printf("\naz = %d \n",mpu6050_get_data(ACCEL_ZOUT_H));	
-		printf("\nwx = %d \n",mpu6050_get_data(GYRO_XOUT_H));	
-		printf("\nwy = %d \n",mpu6050_get_data(GYRO_YOUT_H));	
-		printf("\nwz = %d \n",mpu6050_get_data(GYRO_ZOUT_H));
+		ax = mpu6050_get_data(ACCEL_XOUT_H);
+		ay = mpu6050_get_data(ACCEL_YOUT_H);
+		az = mpu6050_get_data(ACCEL_ZOUT_H);
+		wx = mpu6050_get_data(GYRO_XOUT_H);
+		wy = mpu6050_get_data(GYRO_YOUT_H);
+		wz = mpu6050_get_data(GYRO_ZOUT_H);
+		printf("\nax = %d \n", ax);
+		printf("\nay = %d \n", ay);
+		printf("\naz = %d \n", az);
+		printf("\nwx = %d \n", wx);
+		printf("\nwy = %d \n", wy);
+		printf("\nwz = %d \n", wz);
 	}
 	return 0;
 }
