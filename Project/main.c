@@ -7,8 +7,11 @@ int main(void)
 {
 	int8_t ax, ay, az;
 	int8_t wx, wy, wz;
+	
 	usart1_init();
 	i2c1_init();
+	
+	mpu6050_print_default();
 	
 	while(1)
 	{

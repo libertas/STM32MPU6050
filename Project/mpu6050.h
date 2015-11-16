@@ -1,4 +1,5 @@
 #include <i2c.h>
+#include <stdio.h>
 
 #define	SMPLRT_DIV		0x19
 #define	CONFIG				0x1A
@@ -25,3 +26,4 @@
 void 	mpu6050_init(void);
 uint8_t mpu6050_read(uint8_t reg);
 signed int mpu6050_get_data(uint8_t reg);
+void mpu6050_print_default(void);
