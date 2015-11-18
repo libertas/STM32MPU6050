@@ -11,8 +11,9 @@ int main(void)
 	usart1_init();
 	i2c1_init();
 	
+	mpu6050_init();
 	mpu6050_print_default();
-	
+
 	while(1)
 	{
 		ax = mpu6050_get_data(ACCEL_XOUT_H);

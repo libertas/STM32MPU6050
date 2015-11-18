@@ -6,6 +6,7 @@ Section Cross References
 
     main.o(i.main) refers to usart.o(i.usart1_init) for usart1_init
     main.o(i.main) refers to i2c.o(i.i2c1_init) for i2c1_init
+    main.o(i.main) refers to mpu6050.o(i.mpu6050_init) for mpu6050_init
     main.o(i.main) refers to mpu6050.o(i.mpu6050_print_default) for mpu6050_print_default
     main.o(i.main) refers to mpu6050.o(i.mpu6050_get_data) for mpu6050_get_data
     main.o(i.main) refers to printfa.o(i.__0printf) for __2printf
@@ -391,8 +392,6 @@ Section Cross References
 
 Removing Unused input sections from the image.
 
-    Removing i2c.o(i.i2c1_write), (128 bytes).
-    Removing mpu6050.o(i.mpu6050_init), (56 bytes).
     Removing usart.o(i.fgetc), (32 bytes).
     Removing usart.o(i.uprintf), (74 bytes).
     Removing misc.o(i.NVIC_Init), (100 bytes).
@@ -846,7 +845,7 @@ Removing Unused input sections from the image.
     Removing core_cm3.o(.emb_text), (32 bytes).
     Removing startup_stm32f10x_hd.o(HEAP), (512 bytes).
 
-454 unused section(s) (total 14712 bytes) removed from the image.
+452 unused section(s) (total 14528 bytes) removed from the image.
 
 ==============================================================================
 
@@ -856,35 +855,35 @@ Image Symbol Table
 
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
-    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
@@ -1001,11 +1000,13 @@ Image Symbol Table
     i.fputc                                  0x08001454   Section        0  usart.o(i.fputc)
     i.i2c1_init                              0x08001478   Section        0  i2c.o(i.i2c1_init)
     i.i2c1_read                              0x080014e8   Section        0  i2c.o(i.i2c1_read)
-    i.main                                   0x080015b4   Section        0  main.o(i.main)
-    i.mpu6050_get_data                       0x08001670   Section        0  mpu6050.o(i.mpu6050_get_data)
-    i.mpu6050_print_default                  0x0800168c   Section        0  mpu6050.o(i.mpu6050_print_default)
-    i.mpu6050_read                           0x080017c8   Section        0  mpu6050.o(i.mpu6050_read)
-    i.usart1_init                            0x080017d0   Section        0  usart.o(i.usart1_init)
+    i.i2c1_write                             0x080015b4   Section        0  i2c.o(i.i2c1_write)
+    i.main                                   0x08001634   Section        0  main.o(i.main)
+    i.mpu6050_get_data                       0x080016f4   Section        0  mpu6050.o(i.mpu6050_get_data)
+    i.mpu6050_init                           0x0800170e   Section        0  mpu6050.o(i.mpu6050_init)
+    i.mpu6050_print_default                  0x08001748   Section        0  mpu6050.o(i.mpu6050_print_default)
+    i.mpu6050_read                           0x08001884   Section        0  mpu6050.o(i.mpu6050_read)
+    i.usart1_init                            0x0800188c   Section        0  usart.o(i.usart1_init)
     .data                                    0x20000000   Section       20  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000000   Data           4  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000004   Data          16  stm32f10x_rcc.o(.data)
@@ -1198,13 +1199,15 @@ Image Symbol Table
     fputc                                    0x08001455   Thumb Code    30  usart.o(i.fputc)
     i2c1_init                                0x08001479   Thumb Code   102  i2c.o(i.i2c1_init)
     i2c1_read                                0x080014e9   Thumb Code   192  i2c.o(i.i2c1_read)
-    main                                     0x080015b5   Thumb Code   114  main.o(i.main)
-    mpu6050_get_data                         0x08001671   Thumb Code    26  mpu6050.o(i.mpu6050_get_data)
-    mpu6050_print_default                    0x0800168d   Thumb Code   216  mpu6050.o(i.mpu6050_print_default)
-    mpu6050_read                             0x080017c9   Thumb Code     8  mpu6050.o(i.mpu6050_read)
-    usart1_init                              0x080017d1   Thumb Code   116  usart.o(i.usart1_init)
-    Region$$Table$$Base                      0x0800184c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800186c   Number         0  anon$$obj.o(Region$$Table)
+    i2c1_write                               0x080015b5   Thumb Code   114  i2c.o(i.i2c1_write)
+    main                                     0x08001635   Thumb Code   118  main.o(i.main)
+    mpu6050_get_data                         0x080016f5   Thumb Code    26  mpu6050.o(i.mpu6050_get_data)
+    mpu6050_init                             0x0800170f   Thumb Code    56  mpu6050.o(i.mpu6050_init)
+    mpu6050_print_default                    0x08001749   Thumb Code   216  mpu6050.o(i.mpu6050_print_default)
+    mpu6050_read                             0x08001885   Thumb Code     8  mpu6050.o(i.mpu6050_read)
+    usart1_init                              0x0800188d   Thumb Code   116  usart.o(i.usart1_init)
+    Region$$Table$$Base                      0x08001908   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001928   Number         0  anon$$obj.o(Region$$Table)
     __stdout                                 0x20000014   Data           4  stdout.o(.data)
     __initial_sp                             0x20000418   Data           0  startup_stm32f10x_hd.o(STACK)
 
@@ -1216,9 +1219,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001884, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001940, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x0000186c, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001928, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1296,13 +1299,15 @@ Memory Map of the image
     0x08001454   0x00000024   Code   RO          199    i.fputc             usart.o
     0x08001478   0x00000070   Code   RO          138    i.i2c1_init         i2c.o
     0x080014e8   0x000000cc   Code   RO          139    i.i2c1_read         i2c.o
-    0x080015b4   0x000000bc   Code   RO            1    i.main              main.o
-    0x08001670   0x0000001a   Code   RO          162    i.mpu6050_get_data  mpu6050.o
-    0x0800168a   0x00000002   PAD
-    0x0800168c   0x0000013c   Code   RO          164    i.mpu6050_print_default  mpu6050.o
-    0x080017c8   0x00000008   Code   RO          165    i.mpu6050_read      mpu6050.o
-    0x080017d0   0x0000007c   Code   RO          201    i.usart1_init       usart.o
-    0x0800184c   0x00000020   Data   RO         3546    Region$$Table       anon$$obj.o
+    0x080015b4   0x00000080   Code   RO          140    i.i2c1_write        i2c.o
+    0x08001634   0x000000c0   Code   RO            1    i.main              main.o
+    0x080016f4   0x0000001a   Code   RO          162    i.mpu6050_get_data  mpu6050.o
+    0x0800170e   0x00000038   Code   RO          163    i.mpu6050_init      mpu6050.o
+    0x08001746   0x00000002   PAD
+    0x08001748   0x0000013c   Code   RO          164    i.mpu6050_print_default  mpu6050.o
+    0x08001884   0x00000008   Code   RO          165    i.mpu6050_read      mpu6050.o
+    0x0800188c   0x0000007c   Code   RO          201    i.usart1_init       usart.o
+    0x08001908   0x00000020   Data   RO         3546    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000418, Max: 0x00010000, ABSOLUTE)
@@ -1322,9 +1327,9 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
          0          0          0          0          0         32   core_cm3.o
-       316         22          0          0          0       1084   i2c.o
-       188         74          0          0          0     239143   main.o
-       350        100          0          0          0       1712   mpu6050.o
+       444         36          0          0          0       1585   i2c.o
+       192         74          0          0          0     239147   main.o
+       406        100          0          0          0       2119   mpu6050.o
         36          8        304          0       1024        860   startup_stm32f10x_hd.o
        162          0          0          0          0       1788   stm32f10x_gpio.o
        360         10          0          0          0       7228   stm32f10x_i2c.o
@@ -1335,7 +1340,7 @@ Image component sizes
        160         14          0          0          0       2750   usart.o
 
     ----------------------------------------------------------------------
-      2258        286        336         20       1024     267470   Object Totals
+      2446        300        336         20       1024     268382   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         14          0          0          0          0          0   (incl. Padding)
 
@@ -1390,15 +1395,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      5916        392        336         24       1024     266694   Grand Totals
-      5916        392        336         24       1024     266694   ELF Image Totals
-      5916        392        336         24          0          0   ROM Totals
+      6104        406        336         24       1024     267502   Grand Totals
+      6104        406        336         24       1024     267502   ELF Image Totals
+      6104        406        336         24          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 6252 (   6.11kB)
+    Total RO  Size (Code + RO Data)                 6440 (   6.29kB)
     Total RW  Size (RW Data + ZI Data)              1048 (   1.02kB)
-    Total ROM Size (Code + RO Data + RW Data)       6276 (   6.13kB)
+    Total ROM Size (Code + RO Data + RW Data)       6464 (   6.31kB)
 
 ==============================================================================
 
