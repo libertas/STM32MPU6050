@@ -24,6 +24,8 @@ void usart1_init(void)
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 	USART_Init(USART1, &USART_InitStructure); 
   USART_Cmd(USART1, ENABLE);
+	
+	printf("\nUSART1 Initlized!\n");
 }
 
 int fputc(int ch, FILE *f)

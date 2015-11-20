@@ -4,6 +4,8 @@
 ".\ministm32\i2c.o"
 ".\ministm32\mpu6050.o"
 ".\ministm32\usart.o"
+".\ministm32\clcok.o"
+".\ministm32\config.o"
 ".\ministm32\misc.o"
 ".\ministm32\stm32f10x_adc.o"
 ".\ministm32\stm32f10x_bkp.o"

@@ -2,12 +2,17 @@
 #include "i2c.h"
 #include "mpu6050.h"
 #include "usart.h"
+#include "clock.h"
+#include "config.h"
 
 int main(void)
 {
 	int8_t ax, ay, az;
 	int8_t wx, wy, wz;
 	
+	rcc_init();
+	clock_init();
+	gpio_init();
 	usart1_init();
 	i2c1_init();
 	

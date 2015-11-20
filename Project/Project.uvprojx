@@ -433,6 +433,16 @@
               <FileType>1</FileType>
               <FilePath>.\usart.c</FilePath>
             </File>
+            <File>
+              <FileName>clcok.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\clcok.c</FilePath>
+            </File>
+            <File>
+              <FileName>config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\config.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
