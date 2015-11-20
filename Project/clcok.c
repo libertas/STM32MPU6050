@@ -1,4 +1,10 @@
 #include "clock.h"
+#include <stdio.h>
+
+/*
+	Global system time (ms)
+*/
+unsigned long g_systime = 0;
 
 void clock_init(void)
 {
@@ -25,4 +31,11 @@ void clock_init(void)
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&NVIC_InitStructure);
+}
+
+void delay_ms(unsigned long ms)
+{
+	unsigned long last_time = g_systime;
+	while(g_systime - last_time < ms)
+		printf("Delaying\n");  // Without this the loop will be optimized
 }

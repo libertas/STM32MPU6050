@@ -114,19 +114,18 @@ void SysTick_Handler(void)
 }
 
 
-char flag = 0;
+extern unsigned long g_systime;
 
 void TIM2_IRQHandler(void)
 {
 	if(TIM_GetITStatus(TIM2, TIM_IT_CC1) != RESET)
 	{
-		GPIO_WriteBit(GPIOA, GPIO_Pin_4, flag);
-		
-		flag = !flag;
+		g_systime++;
 		
 		TIM_ClearITPendingBit(TIM2, TIM_IT_CC1);
 	}
 }
+
 
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */

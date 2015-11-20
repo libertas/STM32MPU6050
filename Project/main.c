@@ -9,6 +9,7 @@ int main(void)
 {
 	int8_t ax, ay, az;
 	int8_t wx, wy, wz;
+	uint8_t flag = 0;
 	
 	rcc_init();
 	clock_init();
@@ -21,18 +22,9 @@ int main(void)
 
 	while(1)
 	{
-		ax = mpu6050_get_data(ACCEL_XOUT_H);
-		ay = mpu6050_get_data(ACCEL_YOUT_H);
-		az = mpu6050_get_data(ACCEL_ZOUT_H);
-		wx = mpu6050_get_data(GYRO_XOUT_H);
-		wy = mpu6050_get_data(GYRO_YOUT_H);
-		wz = mpu6050_get_data(GYRO_ZOUT_H);
-		printf("\nax = %d \n", ax);
-		printf("\nay = %d \n", ay);
-		printf("\naz = %d \n", az);
-		printf("\nwx = %d \n", wx);
-		printf("\nwy = %d \n", wy);
-		printf("\nwz = %d \n", wz);
+		GPIO_WriteBit(GPIOA, GPIO_Pin_4, flag);
+		flag = !flag;
+		delay_ms(1);
 	}
 	return 0;
 }
