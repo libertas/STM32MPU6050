@@ -62,7 +62,6 @@ Section Cross References
     clcok.o(i.clock_init) refers to stm32f10x_tim.o(i.TIM_Cmd) for TIM_Cmd
     clcok.o(i.clock_init) refers to misc.o(i.NVIC_PriorityGroupConfig) for NVIC_PriorityGroupConfig
     clcok.o(i.clock_init) refers to misc.o(i.NVIC_Init) for NVIC_Init
-    clcok.o(i.delay_ms) refers to printfa.o(i.__0printf) for __2printf
     clcok.o(i.delay_ms) refers to clcok.o(.data) for .data
     config.o(i.gpio_init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
     config.o(i.gpio_init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
@@ -1034,18 +1033,18 @@ Image Symbol Table
     _printf_pre_padding                      0x080017b1   Thumb Code    46  printfa.o(i._printf_pre_padding)
     i.clock_init                             0x080017de   Section        0  clcok.o(i.clock_init)
     i.delay_ms                               0x08001848   Section        0  clcok.o(i.delay_ms)
-    i.fputc                                  0x08001874   Section        0  usart.o(i.fputc)
-    i.gpio_init                              0x08001898   Section        0  config.o(i.gpio_init)
-    i.i2c1_init                              0x080018c4   Section        0  i2c.o(i.i2c1_init)
-    i.i2c1_read                              0x08001934   Section        0  i2c.o(i.i2c1_read)
-    i.i2c1_write                             0x08001a00   Section        0  i2c.o(i.i2c1_write)
-    i.main                                   0x08001a80   Section        0  main.o(i.main)
-    i.mpu6050_get_data                       0x08001ac0   Section        0  mpu6050.o(i.mpu6050_get_data)
-    i.mpu6050_init                           0x08001ada   Section        0  mpu6050.o(i.mpu6050_init)
-    i.mpu6050_print_default                  0x08001b14   Section        0  mpu6050.o(i.mpu6050_print_default)
-    i.mpu6050_read                           0x08001c50   Section        0  mpu6050.o(i.mpu6050_read)
-    i.rcc_init                               0x08001c58   Section        0  config.o(i.rcc_init)
-    i.usart1_init                            0x08001cbc   Section        0  usart.o(i.usart1_init)
+    i.fputc                                  0x0800185c   Section        0  usart.o(i.fputc)
+    i.gpio_init                              0x08001880   Section        0  config.o(i.gpio_init)
+    i.i2c1_init                              0x080018ac   Section        0  i2c.o(i.i2c1_init)
+    i.i2c1_read                              0x0800191c   Section        0  i2c.o(i.i2c1_read)
+    i.i2c1_write                             0x080019e8   Section        0  i2c.o(i.i2c1_write)
+    i.main                                   0x08001a68   Section        0  main.o(i.main)
+    i.mpu6050_get_data                       0x08001aa8   Section        0  mpu6050.o(i.mpu6050_get_data)
+    i.mpu6050_init                           0x08001ac2   Section        0  mpu6050.o(i.mpu6050_init)
+    i.mpu6050_print_default                  0x08001afc   Section        0  mpu6050.o(i.mpu6050_print_default)
+    i.mpu6050_read                           0x08001c38   Section        0  mpu6050.o(i.mpu6050_read)
+    i.rcc_init                               0x08001c40   Section        0  config.o(i.rcc_init)
+    i.usart1_init                            0x08001ca4   Section        0  usart.o(i.usart1_init)
     .data                                    0x20000000   Section        4  clcok.o(.data)
     .data                                    0x20000004   Section       20  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000004   Data           4  stm32f10x_rcc.o(.data)
@@ -1259,21 +1258,21 @@ Image Symbol Table
     __scatterload_null                       0x08000f3b   Thumb Code     2  handlers.o(i.__scatterload_null)
     __scatterload_zeroinit                   0x08000f3d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
     clock_init                               0x080017df   Thumb Code   106  clcok.o(i.clock_init)
-    delay_ms                                 0x08001849   Thumb Code    26  clcok.o(i.delay_ms)
-    fputc                                    0x08001875   Thumb Code    30  usart.o(i.fputc)
-    gpio_init                                0x08001899   Thumb Code    38  config.o(i.gpio_init)
-    i2c1_init                                0x080018c5   Thumb Code   102  i2c.o(i.i2c1_init)
-    i2c1_read                                0x08001935   Thumb Code   192  i2c.o(i.i2c1_read)
-    i2c1_write                               0x08001a01   Thumb Code   114  i2c.o(i.i2c1_write)
-    main                                     0x08001a81   Thumb Code    58  main.o(i.main)
-    mpu6050_get_data                         0x08001ac1   Thumb Code    26  mpu6050.o(i.mpu6050_get_data)
-    mpu6050_init                             0x08001adb   Thumb Code    56  mpu6050.o(i.mpu6050_init)
-    mpu6050_print_default                    0x08001b15   Thumb Code   216  mpu6050.o(i.mpu6050_print_default)
-    mpu6050_read                             0x08001c51   Thumb Code     8  mpu6050.o(i.mpu6050_read)
-    rcc_init                                 0x08001c59   Thumb Code    98  config.o(i.rcc_init)
-    usart1_init                              0x08001cbd   Thumb Code   122  usart.o(i.usart1_init)
-    Region$$Table$$Base                      0x08001d54   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001d74   Number         0  anon$$obj.o(Region$$Table)
+    delay_ms                                 0x08001849   Thumb Code    14  clcok.o(i.delay_ms)
+    fputc                                    0x0800185d   Thumb Code    30  usart.o(i.fputc)
+    gpio_init                                0x08001881   Thumb Code    38  config.o(i.gpio_init)
+    i2c1_init                                0x080018ad   Thumb Code   102  i2c.o(i.i2c1_init)
+    i2c1_read                                0x0800191d   Thumb Code   192  i2c.o(i.i2c1_read)
+    i2c1_write                               0x080019e9   Thumb Code   114  i2c.o(i.i2c1_write)
+    main                                     0x08001a69   Thumb Code    58  main.o(i.main)
+    mpu6050_get_data                         0x08001aa9   Thumb Code    26  mpu6050.o(i.mpu6050_get_data)
+    mpu6050_init                             0x08001ac3   Thumb Code    56  mpu6050.o(i.mpu6050_init)
+    mpu6050_print_default                    0x08001afd   Thumb Code   216  mpu6050.o(i.mpu6050_print_default)
+    mpu6050_read                             0x08001c39   Thumb Code     8  mpu6050.o(i.mpu6050_read)
+    rcc_init                                 0x08001c41   Thumb Code    98  config.o(i.rcc_init)
+    usart1_init                              0x08001ca5   Thumb Code   122  usart.o(i.usart1_init)
+    Region$$Table$$Base                      0x08001d3c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001d5c   Number         0  anon$$obj.o(Region$$Table)
     g_systime                                0x20000000   Data           4  clcok.o(.data)
     __stdout                                 0x20000018   Data           4  stdout.o(.data)
     __initial_sp                             0x20000420   Data           0  startup_stm32f10x_hd.o(STACK)
@@ -1286,9 +1285,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001d90, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001d78, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001d74, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001d5c, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1388,22 +1387,22 @@ Memory Map of the image
     0x0800178c   0x00000024   Code   RO         3537    i._printf_post_padding  mc_w.l(printfa.o)
     0x080017b0   0x0000002e   Code   RO         3538    i._printf_pre_padding  mc_w.l(printfa.o)
     0x080017de   0x0000006a   Code   RO          251    i.clock_init        clcok.o
-    0x08001848   0x0000002c   Code   RO          252    i.delay_ms          clcok.o
-    0x08001874   0x00000024   Code   RO          215    i.fputc             usart.o
-    0x08001898   0x0000002c   Code   RO          272    i.gpio_init         config.o
-    0x080018c4   0x00000070   Code   RO          154    i.i2c1_init         i2c.o
-    0x08001934   0x000000cc   Code   RO          155    i.i2c1_read         i2c.o
-    0x08001a00   0x00000080   Code   RO          156    i.i2c1_write        i2c.o
-    0x08001a80   0x00000040   Code   RO            1    i.main              main.o
-    0x08001ac0   0x0000001a   Code   RO          178    i.mpu6050_get_data  mpu6050.o
-    0x08001ada   0x00000038   Code   RO          179    i.mpu6050_init      mpu6050.o
-    0x08001b12   0x00000002   PAD
-    0x08001b14   0x0000013c   Code   RO          180    i.mpu6050_print_default  mpu6050.o
-    0x08001c50   0x00000008   Code   RO          181    i.mpu6050_read      mpu6050.o
-    0x08001c58   0x00000062   Code   RO          273    i.rcc_init          config.o
-    0x08001cba   0x00000002   PAD
-    0x08001cbc   0x00000098   Code   RO          217    i.usart1_init       usart.o
-    0x08001d54   0x00000020   Data   RO         3598    Region$$Table       anon$$obj.o
+    0x08001848   0x00000014   Code   RO          252    i.delay_ms          clcok.o
+    0x0800185c   0x00000024   Code   RO          215    i.fputc             usart.o
+    0x08001880   0x0000002c   Code   RO          272    i.gpio_init         config.o
+    0x080018ac   0x00000070   Code   RO          154    i.i2c1_init         i2c.o
+    0x0800191c   0x000000cc   Code   RO          155    i.i2c1_read         i2c.o
+    0x080019e8   0x00000080   Code   RO          156    i.i2c1_write        i2c.o
+    0x08001a68   0x00000040   Code   RO            1    i.main              main.o
+    0x08001aa8   0x0000001a   Code   RO          178    i.mpu6050_get_data  mpu6050.o
+    0x08001ac2   0x00000038   Code   RO          179    i.mpu6050_init      mpu6050.o
+    0x08001afa   0x00000002   PAD
+    0x08001afc   0x0000013c   Code   RO          180    i.mpu6050_print_default  mpu6050.o
+    0x08001c38   0x00000008   Code   RO          181    i.mpu6050_read      mpu6050.o
+    0x08001c40   0x00000062   Code   RO          273    i.rcc_init          config.o
+    0x08001ca2   0x00000002   PAD
+    0x08001ca4   0x00000098   Code   RO          217    i.usart1_init       usart.o
+    0x08001d3c   0x00000020   Data   RO         3598    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000420, Max: 0x00010000, ABSOLUTE)
@@ -1424,11 +1423,11 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       150         18          0          4          0       1204   clcok.o
+       126          6          0          4          0       1160   clcok.o
        142          6          0          0          0        855   config.o
          0          0          0          0          0         32   core_cm3.o
        444         36          0          0          0       1601   i2c.o
-        64          6          0          0          0     260091   main.o
+        64          6          0          0          0     260035   main.o
        120         16          0          0          0       1475   misc.o
        406        100          0          0          0       2155   mpu6050.o
         36          8        304          0       1024        868   startup_stm32f10x_hd.o
@@ -1443,7 +1442,7 @@ Image component sizes
        188         36          0          0          0       2770   usart.o
 
     ----------------------------------------------------------------------
-      3548        436        336         24       1024     305858   Object Totals
+      3524        424        336         24       1024     305758   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         20          0          0          0          0          0   (incl. Padding)
 
@@ -1498,15 +1497,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7204        542        336         28       1028     303574   Grand Totals
-      7204        542        336         28       1028     303574   ELF Image Totals
-      7204        542        336         28          0          0   ROM Totals
+      7180        530        336         28       1028     303474   Grand Totals
+      7180        530        336         28       1028     303474   ELF Image Totals
+      7180        530        336         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7540 (   7.36kB)
+    Total RO  Size (Code + RO Data)                 7516 (   7.34kB)
     Total RW  Size (RW Data + ZI Data)              1056 (   1.03kB)
-    Total ROM Size (Code + RO Data + RW Data)       7568 (   7.39kB)
+    Total ROM Size (Code + RO Data + RW Data)       7544 (   7.37kB)
 
 ==============================================================================
 

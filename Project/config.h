@@ -2,4 +2,3 @@
 
 void rcc_init(void);
 void gpio_init(void);
-	

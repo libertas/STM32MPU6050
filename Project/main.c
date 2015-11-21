@@ -7,8 +7,6 @@
 
 int main(void)
 {
-	int8_t ax, ay, az;
-	int8_t wx, wy, wz;
 	uint8_t flag = 0;
 	
 	rcc_init();

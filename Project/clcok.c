@@ -3,8 +3,9 @@
 
 /*
 	Global system time (ms)
+	"volatile" means is will not be optimized
 */
-unsigned long g_systime = 0;
+volatile unsigned long g_systime = 0;
 
 void clock_init(void)
 {
@@ -36,6 +37,5 @@ void clock_init(void)
 void delay_ms(unsigned long ms)
 {
 	unsigned long last_time = g_systime;
-	while(g_systime - last_time < ms)
-		printf("Delaying\n");  // Without this the loop will be optimized
+	while(g_systime - last_time < ms);
 }
