@@ -7,20 +7,18 @@
 
 int main(void)
 {
-	uint8_t flag = 0;
-	
 	rcc_init();
 	clock_init();
 	gpio_init();
 	usart1_init();
+	usart2_init();
 	i2c1_init();
-	
+
 	mpu6050_init();
 	mpu6050_print_default();
 
 	while(1)
 	{
-		printf("%ld\n", get_ms());
 	}
 	return 0;
 }
