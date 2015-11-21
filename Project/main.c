@@ -20,9 +20,7 @@ int main(void)
 
 	while(1)
 	{
-		GPIO_WriteBit(GPIOA, GPIO_Pin_4, flag);
-		flag = !flag;
-		delay_ms(1);
+		printf("%ld\n", get_ms());
 	}
 	return 0;
 }

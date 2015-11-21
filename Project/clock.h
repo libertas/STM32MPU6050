@@ -2,3 +2,4 @@
 
 void clock_init(void);
 void delay_ms(unsigned long ms);
+unsigned long get_ms();

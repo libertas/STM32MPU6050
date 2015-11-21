@@ -39,3 +39,9 @@ void delay_ms(unsigned long ms)
 	unsigned long last_time = g_systime;
 	while(g_systime - last_time < ms);
 }
+
+
+unsigned long get_ms()
+{
+	return g_systime;
+}
