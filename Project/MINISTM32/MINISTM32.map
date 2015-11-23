@@ -54,13 +54,12 @@ Section Cross References
     usart.o(i.usart1_init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
     usart.o(i.usart1_init) refers to stm32f10x_usart.o(i.USART_Init) for USART_Init
     usart.o(i.usart1_init) refers to stm32f10x_usart.o(i.USART_Cmd) for USART_Cmd
-    usart.o(i.usart1_init) refers to printfa.o(i.__0printf) for __2printf
     usart.o(i.usart2_init) refers to stm32f10x_gpio.o(i.GPIO_PinRemapConfig) for GPIO_PinRemapConfig
     usart.o(i.usart2_init) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd) for RCC_APB1PeriphClockCmd
+    usart.o(i.usart2_init) refers to stm32f10x_rcc.o(i.RCC_APB2PeriphClockCmd) for RCC_APB2PeriphClockCmd
     usart.o(i.usart2_init) refers to stm32f10x_gpio.o(i.GPIO_Init) for GPIO_Init
     usart.o(i.usart2_init) refers to stm32f10x_usart.o(i.USART_Init) for USART_Init
     usart.o(i.usart2_init) refers to stm32f10x_usart.o(i.USART_Cmd) for USART_Cmd
-    usart.o(i.usart2_init) refers to printfa.o(i.__0printf) for __2printf
     clcok.o(i.clock_init) refers to stm32f10x_rcc.o(i.RCC_APB1PeriphClockCmd) for RCC_APB1PeriphClockCmd
     clcok.o(i.clock_init) refers to stm32f10x_tim.o(i.TIM_TimeBaseInit) for TIM_TimeBaseInit
     clcok.o(i.clock_init) refers to stm32f10x_tim.o(i.TIM_OC1Init) for TIM_OC1Init
@@ -1053,7 +1052,7 @@ Image Symbol Table
     i.mpu6050_read                           0x08001c54   Section        0  mpu6050.o(i.mpu6050_read)
     i.rcc_init                               0x08001c5c   Section        0  config.o(i.rcc_init)
     i.usart1_init                            0x08001cc0   Section        0  usart.o(i.usart1_init)
-    i.usart2_init                            0x08001d60   Section        0  usart.o(i.usart2_init)
+    i.usart2_init                            0x08001d44   Section        0  usart.o(i.usart2_init)
     .data                                    0x20000000   Section        4  clcok.o(.data)
     .data                                    0x20000004   Section       20  stm32f10x_rcc.o(.data)
     ADCPrescTable                            0x20000004   Data           4  stm32f10x_rcc.o(.data)
@@ -1278,10 +1277,10 @@ Image Symbol Table
     mpu6050_print_default                    0x08001b19   Thumb Code   216  mpu6050.o(i.mpu6050_print_default)
     mpu6050_read                             0x08001c55   Thumb Code     8  mpu6050.o(i.mpu6050_read)
     rcc_init                                 0x08001c5d   Thumb Code    98  config.o(i.rcc_init)
-    usart1_init                              0x08001cc1   Thumb Code   130  usart.o(i.usart1_init)
-    usart2_init                              0x08001d61   Thumb Code   124  usart.o(i.usart2_init)
-    Region$$Table$$Base                      0x08001dfc   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08001e1c   Number         0  anon$$obj.o(Region$$Table)
+    usart1_init                              0x08001cc1   Thumb Code   124  usart.o(i.usart1_init)
+    usart2_init                              0x08001d45   Thumb Code   126  usart.o(i.usart2_init)
+    Region$$Table$$Base                      0x08001dcc   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001dec   Number         0  anon$$obj.o(Region$$Table)
     g_systime                                0x20000000   Data           4  clcok.o(.data)
     __stdout                                 0x20000018   Data           4  stdout.o(.data)
     __initial_sp                             0x20000420   Data           0  startup_stm32f10x_hd.o(STACK)
@@ -1294,9 +1293,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001e38, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001e08, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001e1c, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00001dec, Max: 0x00080000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1409,9 +1408,9 @@ Memory Map of the image
     0x08001c54   0x00000008   Code   RO          181    i.mpu6050_read      mpu6050.o
     0x08001c5c   0x00000062   Code   RO          285    i.rcc_init          config.o
     0x08001cbe   0x00000002   PAD
-    0x08001cc0   0x000000a0   Code   RO          217    i.usart1_init       usart.o
-    0x08001d60   0x0000009c   Code   RO          218    i.usart2_init       usart.o
-    0x08001dfc   0x00000020   Data   RO         3610    Region$$Table       anon$$obj.o
+    0x08001cc0   0x00000084   Code   RO          217    i.usart1_init       usart.o
+    0x08001d44   0x00000088   Code   RO          218    i.usart2_init       usart.o
+    0x08001dcc   0x00000020   Data   RO         3610    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000420, Max: 0x00010000, ABSOLUTE)
@@ -1432,26 +1431,26 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       106          0          0          4          0        765   clcok.o
-       142          6          0          0          0        855   config.o
+       106          0          0          4          0        753   clcok.o
+       142          6          0          0          0        847   config.o
          0          0          0          0          0         32   core_cm3.o
-       444         36          0          0          0       1601   i2c.o
-        34          0          0          0          0     260003   main.o
-       120         16          0          0          0       1475   misc.o
-       406        100          0          0          0       2155   mpu6050.o
-        36          8        304          0       1024        868   startup_stm32f10x_hd.o
-        44         12          0          0          0       1037   stm32f10x_flash.o
-       250          6          0          0          0       2506   stm32f10x_gpio.o
-       360         10          0          0          0       7296   stm32f10x_i2c.o
-        62          6          0          0          0       3824   stm32f10x_it.o
-       528         88          0         20          0      10198   stm32f10x_rcc.o
-       350         64          0          0          0       4903   stm32f10x_tim.o
-       214          6          0          0          0       3844   stm32f10x_usart.o
-       248         24          0          0          0       1381   system_stm32f10x.o
-       352         68          0          0          0       3336   usart.o
+       444         36          0          0          0       1585   i2c.o
+        34          0          0          0          0     259951   main.o
+       120         16          0          0          0       1455   misc.o
+       406        100          0          0          0       2119   mpu6050.o
+        36          8        304          0       1024        860   startup_stm32f10x_hd.o
+        44         12          0          0          0       1029   stm32f10x_flash.o
+       250          6          0          0          0       2490   stm32f10x_gpio.o
+       360         10          0          0          0       7228   stm32f10x_i2c.o
+        62          6          0          0          0       3768   stm32f10x_it.o
+       528         88          0         20          0      10114   stm32f10x_rcc.o
+       350         64          0          0          0       4855   stm32f10x_tim.o
+       214          6          0          0          0       3808   stm32f10x_usart.o
+       248         24          0          0          0       1369   system_stm32f10x.o
+       304         24          0          0          0       3304   usart.o
 
     ----------------------------------------------------------------------
-      3716        450        336         24       1024     306079   Object Totals
+      3668        406        336         24       1024     305567   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         20          0          0          0          0          0   (incl. Padding)
 
@@ -1506,15 +1505,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7372        556        336         28       1028     303795   Grand Totals
-      7372        556        336         28       1028     303795   ELF Image Totals
-      7372        556        336         28          0          0   ROM Totals
+      7324        512        336         28       1028     303283   Grand Totals
+      7324        512        336         28       1028     303283   ELF Image Totals
+      7324        512        336         28          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 7708 (   7.53kB)
+    Total RO  Size (Code + RO Data)                 7660 (   7.48kB)
     Total RW  Size (RW Data + ZI Data)              1056 (   1.03kB)
-    Total ROM Size (Code + RO Data + RW Data)       7736 (   7.55kB)
+    Total ROM Size (Code + RO Data + RW Data)       7688 (   7.51kB)
 
 ==============================================================================
 
