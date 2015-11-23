@@ -4,26 +4,26 @@
 #include "usart.h"
 #include "clock.h"
 #include "config.h"
+#include "kinestate.h"
 #include <complex.h>
 
 int main(void)
 {
-	double complex dc;
+	struct kine_state ks = {0};
 	rcc_init();
 	clock_init();
 	gpio_init();
 	usart1_init();
 	usart2_init();
 	i2c1_init();
-
 	mpu6050_init();
+	
 	mpu6050_print_default();
 
 	while(1)
 	{
-		dc = 1 + 2 * I;
-		dc *= dc;
-		uprintf(USART2, "%lf + %lfj\n", creal(dc), cimag(dc));
+		ks = get_kine_state(&ks);
+		printf("%lf, %lf\n", ks.ax, ks.ay);
 	}
 	return 0;
 }

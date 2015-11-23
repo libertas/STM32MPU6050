@@ -23,7 +23,11 @@
 #define	WHO_AM_I			0x75
 #define	SlaveAddress	0xD0
 
+#define ACCEL_RANGE ((double)(2 * 9.8))
+#define ACCEL_CONFIG_CMD 0x01
+
 void 	mpu6050_init(void);
 uint8_t mpu6050_read(uint8_t reg);
 signed int mpu6050_get_data(uint8_t reg);
+double mpu6050_get_exact_data(uint8_t reg);
 void mpu6050_print_default(void);
