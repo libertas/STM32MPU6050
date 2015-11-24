@@ -1,5 +1,6 @@
 #include <i2c.h>
 #include <stdio.h>
+#include "utils.h"
 
 #define	SMPLRT_DIV		0x19
 #define	CONFIG				0x1A

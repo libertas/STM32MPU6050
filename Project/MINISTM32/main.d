@@ -18,6 +18,7 @@
 .\ministm32\main.o: mpu6050.h
 .\ministm32\main.o: .\i2c.h
 .\ministm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\ministm32\main.o: utils.h
 .\ministm32\main.o: usart.h
 .\ministm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
 .\ministm32\main.o: clock.h
@@ -25,6 +26,8 @@
 .\ministm32\main.o: kinestate.h
 .\ministm32\main.o: mpu6050.h
 .\ministm32\main.o: .\i2c.h
+.\ministm32\main.o: utils.h
+.\ministm32\main.o: utils.h
 .\ministm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\complex.h
 .\ministm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\complex.h
 .\ministm32\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\complex.h

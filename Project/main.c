@@ -17,13 +17,11 @@ int main(void)
 	usart2_init();
 	i2c1_init();
 	mpu6050_init();
-	
-	mpu6050_print_default();
 
 	while(1)
 	{
 		ks = get_kine_state(&ks);
-		printf("%lf, %lf\n", ks.ax, ks.ay);
+		printf("%lf, %lf, %lf\n", ks.ax, ks.ay, ks.az);
 	}
 	return 0;
 }

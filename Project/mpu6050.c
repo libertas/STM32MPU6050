@@ -17,7 +17,7 @@ signed int mpu6050_get_data(uint8_t reg)
 
 double mpu6050_get_exact_data(uint8_t reg)
 {
-	signed int result = mpu6050_get_data(reg);
+	double result = int2double(mpu6050_get_data(reg));
 	switch(reg)
 	{
 		case ACCEL_XOUT_H:
@@ -54,16 +54,23 @@ void mpu6050_set_average_values(void)
 {
 	uint16_t i;
 	
+	axd = 0;
+	ayd = 0;
+	azd = 0;
+	wxd = 0;
+	wyd = 0;
+	wzd = 0;
+	
 	#define MPU_SUM 250
 	
 	for(i = 0; i < MPU_SUM; i++)
 	{
-		axd = (double)mpu6050_get_data(ACCEL_XOUT_H) / MPU_SUM;
-		ayd = (double)mpu6050_get_data(ACCEL_YOUT_H) / MPU_SUM;
-		azd = (double)mpu6050_get_data(ACCEL_ZOUT_H) / MPU_SUM;
-		wxd = (double)mpu6050_get_data(GYRO_XOUT_H) / MPU_SUM;
-		wyd = (double)mpu6050_get_data(GYRO_YOUT_H) / MPU_SUM;
-		wzd = (double)mpu6050_get_data(GYRO_ZOUT_H) / MPU_SUM;
+		axd += int2double(mpu6050_get_data(ACCEL_XOUT_H)) / MPU_SUM;
+		ayd += int2double(mpu6050_get_data(ACCEL_YOUT_H)) / MPU_SUM;
+		azd += int2double(mpu6050_get_data(ACCEL_ZOUT_H)) / MPU_SUM;
+		wxd += int2double(mpu6050_get_data(GYRO_XOUT_H)) / MPU_SUM;
+		wyd += int2double(mpu6050_get_data(GYRO_YOUT_H)) / MPU_SUM;
+		wzd += int2double(mpu6050_get_data(GYRO_ZOUT_H)) / MPU_SUM;
 	}
 }
 
