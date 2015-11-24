@@ -127,7 +127,7 @@ I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_sdio.h)(0x5652F082)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x5652F082)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x5652F082)
 I (..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x5652F082)
-F (.\kinestate.c)(0x565462F9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I.\ -I..\Libraries\CMSIS\CM3\CoreSupport -I..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\Libraries\STM32F10x_StdPeriph_Driver\inc -D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\ministm32\kinestate.o --omf_browse .\ministm32\kinestate.crf --depend .\ministm32\kinestate.d)
+F (.\kinestate.c)(0x56546350)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O2 --apcs=interwork --split_sections -I.\ -I..\Libraries\CMSIS\CM3\CoreSupport -I..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I..\Libraries\STM32F10x_StdPeriph_Driver\inc -D__UVISION_VERSION="514" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\ministm32\kinestate.o --omf_browse .\ministm32\kinestate.crf --depend .\ministm32\kinestate.d)
 I (kinestate.h)(0x56545D61)
 I (mpu6050.h)(0x56545CDA)
 I (.\i2c.h)(0x5652F082)
