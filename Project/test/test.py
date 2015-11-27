@@ -59,18 +59,18 @@ if __name__ == "__main__":
         ax_list.append(tmp[0])
         ay_list.append(tmp[1])
         az_list.append(tmp[2])
-    
+
     x = np.arange(0,  len(data_buf),  1)
     ax = np.array(ax_list)
     ay = np.array(ay_list)
     az = np.array(az_list)
-    
+
     plt.plot(x,  ax,  label = "$ax$",  color = "red")
     plt.plot(x,  ay,  label = "$ay$",  color = "blue")
     plt.plot(x,  az,  label = "$az$",  color = "black")
-    
+
     plt.xlabel("Time")
-    plt.ylabel("N/m^2")
-    
+    plt.ylabel("$N/m^2$")
+
     plt.legend()
     plt.show()
