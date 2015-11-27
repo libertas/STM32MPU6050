@@ -68,5 +68,9 @@ if __name__ == "__main__":
     plt.plot(x,  ax,  label = "$ax$",  color = "red")
     plt.plot(x,  ay,  label = "$ay$",  color = "blue")
     plt.plot(x,  az,  label = "$az$",  color = "black")
+    
+    plt.xlabel("Time")
+    plt.ylabel("N/m^2")
+    
     plt.legend()
     plt.show()
