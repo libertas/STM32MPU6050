@@ -47,6 +47,9 @@ if __name__ == "__main__":
     se.close()
 
     # plot
+
+    print("Plotting....")
+
     import numpy as np
     import matplotlib.pyplot as plt
     
