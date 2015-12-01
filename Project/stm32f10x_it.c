@@ -127,6 +127,17 @@ void TIM2_IRQHandler(void)
 }
 
 
+#include "stm32f10x_usart.h"
+
+void USART1_IRQHandler(void)
+{	
+	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
+	{
+		USART_SendData(USART1, USART_ReceiveData(USART1));
+	}
+}
+
+
 /******************************************************************************/
 /*                 STM32F10x Peripherals Interrupt Handlers                   */
 /*  Add here the Interrupt Handler for the used peripheral(s) (PPP), for the  */

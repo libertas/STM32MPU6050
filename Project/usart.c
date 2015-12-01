@@ -4,6 +4,7 @@ void usart1_init(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
 	USART_InitTypeDef USART_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
 
 	GPIO_PinRemapConfig(GPIO_Remap_USART1, DISABLE);
 	
@@ -26,6 +27,14 @@ void usart1_init(void)
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;
 	USART_Init(USART1, &USART_InitStructure); 
   USART_Cmd(USART1, ENABLE);
+
+	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_0);
+	NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_Init(&NVIC_InitStructure);
+
+	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE); 
 }
 
 void usart2_init(void)
