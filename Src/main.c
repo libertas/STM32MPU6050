@@ -245,7 +245,7 @@ static void MX_I2C1_Init(void)
 {
 
   hi2c1.Instance = I2C1;
-  hi2c1.Init.ClockSpeed = 100000;
+  hi2c1.Init.ClockSpeed = 400000;
   hi2c1.Init.DutyCycle = I2C_DUTYCYCLE_2;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
@@ -341,14 +341,17 @@ void StartDefaultTask(void const * argument)
   for(;;)
   {
 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 0);
-	  osDelay(250);
+	  osDelay(50);
 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
-	  osDelay(250);
+	  osDelay(50);
 
 	  ks = mpu6050_get_kine_state(&ks);
 	  msg = (char*)(&(ks.ax));
 
 	  sl_send(0, 0, msg, 12);
+
+	  msg = "test callback1\r\n";
+	  sl_send(0, 1, msg, strlen(msg));
   }
   /* USER CODE END 5 */ 
 }

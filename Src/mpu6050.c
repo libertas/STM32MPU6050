@@ -103,7 +103,7 @@ void mpu6050_set_average_values(void)
 struct kine_state mpu6050_get_kine_state(struct kine_state *now_state)
 {
 	struct kine_state result;
-	double ax, ay, az;
+	float ax, ay, az;
 
 	ax = mpu6050_get_exact_data(ACCEL_XOUT_H);
 	ay = mpu6050_get_exact_data(ACCEL_YOUT_H);
