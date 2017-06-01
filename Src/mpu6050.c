@@ -13,7 +13,6 @@ float int2float(signed int i)
 	}
 	return result;
 }
-
 uint8_t mpu6050_read(uint8_t addr, uint8_t reg)
 {
 	uint8_t data;
@@ -38,7 +37,7 @@ uint8_t mpu6050_write(uint8_t addr, uint8_t reg, uint8_t data)
 
 signed int mpu6050_get_data(uint8_t reg)
 {
-	return ((uint16_t)mpu6050_read(SlaveAddress, reg) << 8) | mpu6050_read(SlaveAddress, reg + 1);
+	return ((uint16_t)mpu6050_read(MPU6050SlaveAddress, reg) << 8) | mpu6050_read(MPU6050SlaveAddress, reg + 1);
 }
 
 float mpu6050_get_exact_data(uint8_t reg)
@@ -120,11 +119,11 @@ void mpu6050_init(I2C_HandleTypeDef *device)
 {
 	i2c_device = device;
 
-	mpu6050_write(SlaveAddress, PWR_MGMT_1, 0x00);
-	mpu6050_write(SlaveAddress, SMPLRT_DIV, 0x07);
-	mpu6050_write(SlaveAddress, CONFIG, 0x06);
-	mpu6050_write(SlaveAddress, GYRO_CONFIG, 0x18);
-	mpu6050_write(SlaveAddress, ACCEL_CONFIG, ACCEL_CONFIG_CMD);
+	mpu6050_write(MPU6050SlaveAddress, PWR_MGMT_1, 0x00);
+	mpu6050_write(MPU6050SlaveAddress, SMPLRT_DIV, 0x07);
+	mpu6050_write(MPU6050SlaveAddress, CONFIG, 0x06);
+	mpu6050_write(MPU6050SlaveAddress, GYRO_CONFIG, 0x18);
+	mpu6050_write(MPU6050SlaveAddress, ACCEL_CONFIG, ACCEL_CONFIG_CMD);
 
 	mpu6050_set_average_values();
 }

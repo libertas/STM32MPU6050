@@ -25,8 +25,7 @@
 #define	GYRO_ZOUT_H		0x47
 #define	GYRO_ZOUT_L		0x48
 #define	PWR_MGMT_1		0x6B
-#define	WHO_AM_I			0x75
-#define	SlaveAddress	0xD0
+#define	MPU6050SlaveAddress	0xD0
 
 #define ACCEL_RANGE ((float)(2 * 9.8))
 #define ACCEL_CONFIG_CMD 0x01
