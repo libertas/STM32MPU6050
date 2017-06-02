@@ -62,6 +62,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 I2C_HandleTypeDef hi2c1;
+DMA_HandleTypeDef hdma_i2c1_tx;
 
 UART_HandleTypeDef huart1;
 DMA_HandleTypeDef hdma_usart1_tx;
@@ -292,6 +293,9 @@ static void MX_DMA_Init(void)
   /* DMA1_Channel4_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Channel4_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(DMA1_Channel4_IRQn);
+  /* DMA1_Channel6_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
 
 }
 
@@ -341,6 +345,8 @@ void StartDefaultTask(void const * argument)
 
   at24c32_init(&hi2c1);
 
+  arduinolcd_init(&hi2c1);
+
   /* Infinite loop */
   for(int i = 0;; i++)
   {
@@ -352,12 +358,13 @@ void StartDefaultTask(void const * argument)
 
 	  sl_send(0, 0, msg, 12);
 
+	  arduinolcd_write("Hello,World!", 12);
 
 	  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_13, 1);
 	  osDelay(500);
 
 	  at24c32_write(i, "hello", 5);
-	  at24c32_read(0, data, 50);
+	  at24c32_read(i, data, 50);
 	  sl_send(0, 1, data, 50);
   }
   /* USER CODE END 5 */ 
